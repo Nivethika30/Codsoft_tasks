@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String playAgain;
-        int roundwon=0,round=0;
+        int roundwon=0,round=0,totalscore=0;
         do {
             round++;
             Random random = new Random();
@@ -38,27 +38,33 @@ public class Main {
             {
                 if(attempts==1)
                 {
-                System.out.println("Your score is: "+ 100);
+                System.out.println("Your score is : "+ 100);
+                totalscore+=100;
                 }
                 else if(attempts==2)
                 {
-                System.out.println("Your score is: "+ 80);
+                System.out.println("Your score is : "+ 80);
+                totalscore+=80;
                 }
                 else if(attempts==3)
                 {
-                System.out.println("Your score is: "+ 60);
+                System.out.println("Your score is : "+ 60);
+                totalscore+=60;
                 }
                 else if(attempts==4)
                 {
-                System.out.println("Your score is: "+ 40);
+                System.out.println("Your score is : "+ 40);
+                totalscore+=40;
                 }
                 else if(attempts==5)
                 {
-                System.out.println("Your score is: "+ 20);
+                System.out.println("Your score is : "+ 20);
+                totalscore+=20;
                 }
                 else if(attempts==6)
                 {
-                System.out.println("Your score is: "+ 10);
+                System.out.println("Your score is : "+ 10);
+                totalscore+=10;
                 }
                 
             }
@@ -69,13 +75,9 @@ public class Main {
             playAgain = sc.nextLine().trim(); 
 
         } while (playAgain.equalsIgnoreCase("Y"));
-        if(roundwon>=1 && round>=2)
-        {
-        System.out.println("You played "+round+" rounds and won "+roundwon+" round");
-        }
-        if(roundwon>=2)
-        {
-        System.out.println("You played "+round+" rounds and won "+roundwon+" rounds");
+        if (roundwon >= 1 && round>=2) {
+            System.out.println("You played " + round + " rounds and won " + roundwon + (roundwon == 1 ? " round" : " rounds"));
+            System.out.println("Total Score you gained : "+totalscore);
         }
         System.out.println("Thanks for playing!");
         sc.close();
